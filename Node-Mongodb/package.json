@@ -1,0 +1,18 @@
+{
+  "name": "nextu-agenda",
+  "version": "1.0.0",
+  "description": "Ejercicio NextU Mongo DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Canas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cookies": "^0.7.1",
+    "express": "^4.16.2",
+    "mongoose": "^4.10.8"
+  }
+}

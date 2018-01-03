@@ -14,13 +14,6 @@ class EventManager {
         })
     }
 
-    eliminarEvento(evento) {
-        let eventId = evento.id
-        $.post('/events/delete/'+eventId, {id: eventId}, (response) => {
-            alert(response)
-        })
-    }
-
     guardarEvento() {
         $('.addButton').on('click', (ev) => {
             ev.preventDefault()
@@ -49,10 +42,41 @@ class EventManager {
                     alert(response)
                 })
                 $('.calendario').fullCalendar('renderEvent', ev)
+                $('#titulo').text = "" 
             } else {
                 alert("Complete los campos obligatorios para el evento")
             }
         })
+    }
+
+    eliminarEvento(evento) {
+      let start = moment(evento.start).format('YYYY-MM-DD HH:mm:ss'),
+            end = moment(evento.end).format('YYYY-MM-DD HH:mm:ss')
+        let ev = {
+            title: evento.title,
+            start: start,
+            end : end
+        }
+        let url = this.urlBase + '/delete'
+        //console.log("antes del post")
+        $.post(url, ev, (response) => {
+            alert(response)
+        })
+    }
+
+    actualizarEvento(evento) {
+      let start = moment(evento.start).format('YYYY-MM-DD HH:mm:ss'),
+            end = moment(evento.end).format('YYYY-MM-DD HH:mm:ss')
+
+      let ev = {
+          title: evento.title,
+          start: start,
+          end: end
+      }
+      let url = this.urlBase + '/update'
+      $.post(url, ev, (response) => {
+          alert(response)
+      })
     }
 
     inicializarFormulario() {
@@ -87,7 +111,7 @@ class EventManager {
                 center: 'title',
                 right: 'month,agendaWeek,basicDay'
             },
-            defaultDate: '2016-11-01',
+            defaultDate: '2017-12-01',
             navLinks: true,
             editable: true,
             eventLimit: true,
@@ -111,8 +135,10 @@ class EventManager {
                 var y2 = ofs.top + trashEl.outerHeight(true);
                 if (jsEvent.pageX >= x1 && jsEvent.pageX<= x2 &&
                     jsEvent.pageY >= y1 && jsEvent.pageY <= y2) {
+                        alert(event.title)
+                        $('.calendario').fullCalendar('removeEvents', event._id);
                         this.eliminarEvento(event)
-                        $('.calendario').fullCalendar('removeEvents', event.id);
+                        $('.delete').find('img').attr('src', "img/delete.png");
                     }
                 }
             })

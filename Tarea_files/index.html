@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0124)https://s3.amazonaws.com/nextu-content-production/Desarrollador_Web/07_Interactuando_Base_de_Datos/Proyecto+final/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" media="screen">
+    <title>Proyecto Final</title>
+  </head>
+  <body class="flex-container justify-center wrap">
+    <header class="flex-container row align-center">
+      <img src="./caja_codigo.png" alt="Proyecto final">
+      <span>¿Preparado para el reto de la <strong>Agenda?</strong></span>
+    </header>
+    <main class="flex-container row wrap">
+      <div class="intro-container">
+        <img src="./agenda.png" alt="Agenda">
+        <p>
+          En este gran reto crearemos una herramienta muy útil: una agenda.
+        </p>
+        <p>
+          La agenda está relacionada con el ser humano desde que se comenzó a medir el tiempo. De hecho, se crearon específicamente para eso. En un mundo lleno de demandas laborales, personales y familiares, tener la posibilidad de almacenar los eventos en un entorno virtual, según la hora y la fecha, es de gran utilidad. Es por este motivo que te invitamos a crear una propia y a que, una vez adquieras la habilidad, la incluyas en tus proyectos de desarrollo.
+        </p>
+      </div>
+      <div class="obj-container">
+        <h2>Objetivo</h2>
+        <p>
+          Desarrolla una agenda que permita crear, editar y eliminar eventos con su información asociada, almacenándolos en una base de datos.
+        </p>
+      </div>
+      <hr>
+      <div class="req-container">
+        <h2>Requerimientos Generales</h2>
+            <ul class="flex-container row wrap justify-center">
+
+              <div class="col-req">
+                <li>
+                  Para realizar correctamente este proyecto debes desarrollar dos versiones de la agenda: Una en PHP y una base de datos en MySQL; la segunda versión en Node.js y una base de datos en MongoDB; de esta manera podrás aplicar tus conocimientos en ambas tecnologías y motores de bases de datos.
+                </li>
+                <li>
+                  Para la versión en PHP de la agenda debes descargar el archivo <a class="resaltado" href="https://s3.amazonaws.com/nextu-content-production/Desarrollador_Web/07_Interactuando_Base_de_Datos/Proyecto+final/NextUcodBaseAgenda_versionPHP.zip">NextUcodBaseAgenda_versionPHP.zip</a> en donde encontrarás todo el desarrollo Front-End de la agenda. De la misma manera, para la versión en Node.js debes descargar el archivo <a class="resaltado" href="https://s3.amazonaws.com/nextu-content-production/Desarrollador_Web/07_Interactuando_Base_de_Datos/Proyecto+final/NextUcodBaseAgenda_versionNode.zip">NextUcodBaseAgenda_versionNode.zip</a> que contiene el Front-End de la agenda para esta versión.
+                </li>
+              </div>
+            </ul>
+            <br>
+            <span>Los requerimientos específicos de este proyecto son:<br><br></span>
+            <div class="big-inst-container flex-container row wrap justify-space-between">
+              <div class="instr-container flex-container column wrap justify-space-between">
+                <div class="vid-title">REQUERIMIENTOS VERSIÓN PHP-MYSQL:</div>
+                <div class="instruccion c3 flex-container align-center row wrap justify-center">
+                  <span><div class="number">1</div>Crea una base de datos mediante la herramienta <strong>phpMyAdmin</strong> en la que se pueda almacenar usuarios con sus contraseñas y eventos de la agenda asociados a cada usuario. Cada evento comprende un id, título, fecha de inicio, hora de inicio, fecha de finalización, hora de finalización (los últimos 3 pueden ser nulos), y un campo booleano que indique si el evento es de día completo o no. Para cada usuario la base de datos debe almacenar el correo electrónico que funcionará como el nombre de usuario único ante el sistema, el nombre completo, su contraseña, y su fecha de nacimiento.</span>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">2</div>
+                    Crea 3 usuarios en la base de datos desde el servidor ejecutando un script de PHP, las contraseñas deben almacenarse encriptadas.
+                  </span>
+                </div>
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">3</div>
+                    Valida el ingreso al sistema al iniciar sesión, comparando los datos ingresados en el formulario con los almacenados en la base de datos.
+                  </span>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">4</div>
+                    Al iniciar una sesión exitosamente, el sistema debe cargar todos los eventos asociados al usuario en la sesión desde la base de datos y mostrarlos en el calendario. La librería usada para el calendario es <strong>FullCalendar</strong>. Puedes encontrar su documentación, si lo consideras necesario, en el siguiente enlace: <a target="_blank" href="https://fullcalendar.io/" class="link">fullcalendar.io</a>
+                  </span>
+                </div>
+                <div class="calc-container">
+                  <video src="img/1P.webm" autoplay="" loop="" class="captura">
+
+                  </video>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">5</div>
+                    Al diligenciar el formulario de la derecha, se debe crear un nuevo evento en el calendario y debe ser almacenado en la base de datos.
+                  </span>
+                </div>
+                <div class="calc-container">
+                  <video src="img/2P.webm" autoplay="" loop="" class="captura">
+
+                  </video>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">6</div>
+                    Al arrastrar un evento al ícono de la basura en la parte derecha de la página, éste debe ser eliminado del calendario y su registro debe eliminarse de la base de datos.
+                  </span>
+                </div>
+                <div class="calc-container">
+                  <video src="img/3P.webm" autoplay="" loop="" class="captura">
+
+                  </video>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">7</div>
+                    Al arrastrar un evento a otro día del calendario, éste debe ser actualizado en la base de datos a las nuevas fechas de inicio y final según su nueva posición.
+                  </span>
+                </div>
+                <div class="calc-container">
+                  <video src="img/4P.webm" autoplay="" loop="" class="captura">
+
+                  </video>
+                </div>
+              </div>
+
+              <div class="instr-container flex-container column wrap justify-start">
+                <div class="vid-title">REQUERIMIENTOS VERSIÓN NODE.JS-MONGODB:</div>
+                <div class="instruccion c3 flex-container align-center row wrap justify-center">
+                  <span><div class="number">1</div>
+                    Crea un script en el servidor que al ejecutarse por consola, cree un nuevo usuario para el sistema en una base de datos en MongoDB.
+                  </span>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">2</div>
+                    Valida el ingreso al sistema al iniciar sesión, comparando los datos ingresados en el formulario con los almacenados en la base de datos.
+                  </span>
+                </div>
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">3</div>
+                    Al iniciar una sesión exitosamente, el sistema debe cargar todos los eventos asociados al usuario en la sesión desde la base de datos y mostrarlos en el calendario.
+                  </span>
+                </div>
+                <div class="calc-container">
+                  <video src="img/1N.webm" autoplay="" loop="" class="captura">
+
+                  </video>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">4</div>
+                    Al diligenciar el formulario de la derecha, se debe crear un nuevo evento en el calendario y debe ser almacenado en la base de datos.
+                  </span>
+                </div>
+                <div class="calc-container">
+                  <video src="img/2N.webm" autoplay="" loop="" class="captura">
+
+                  </video>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">5</div>
+                    Al arrastrar un evento al ícono de la basura en la parte derecha de la página, éste debe ser eliminado del calendario y su registro debe eliminarse de la base de datos.
+                  </span>
+                </div>
+                <div class="calc-container">
+                  <video src="img/3N.webm" autoplay="" loop="" class="captura">
+
+                  </video>
+                </div>
+
+                <div class="instruccion c3 flex-container align-items-start row wrap">
+                  <span>
+                    <div class="number">6</div>
+                    Al arrastrar un evento a otro día del calendario, éste debe ser actualizado en la base de datos a las nuevas fechas de inicio y final según su nueva posición.
+                  </span>
+                </div>
+                <div class="calc-container">
+                  <video src="img/4N.webm" autoplay="" loop="" class="captura">
+
+                  </video>
+                </div>
+              </div>
+
+            </div>
+      </div>
+
+
+      <div class="flex-container row align-center solucion-title">
+        <span>Instrucciones para la <strong>entrega</strong></span>
+      </div>
+      <div class="solucion-contenido">
+        <span>Una vez finalices el proyecto, comprime la carpeta con los archivos y súbela al curso. Ten presentes los siguientes pasos para completar este último requerimiento, de la manera adecuada:</span>
+        <ol>
+          <li>
+            En una carpeta guarda tu proyecto y todos los recursos que consideres necesarios para su funcionamiento. Demás, guarda un archivo <strong>github_url.txt</strong>  que contenga la URL de tu proyecto versionado en el repositorio. Recuerda que haciendo uso de Git Hub podrás crear tu portafolio de aplicaciones web.
+          </li>
+          <li>
+            Utiliza la siguiente estructura para nombrar la carpeta Zip que entregarás pues nos permitirá identificarte: <strong>NombreDelCurso_PrimerNombre_PrimerApellido.zip </strong>
+          </li>
+          <li>
+            Para subir el Zip al curso:
+          </li>
+          <ul>
+            <li>Accede a la página <strong>Evaluación final.</strong></li>
+            <li>Haz clic en <strong>Añadir envío</strong>.</li>
+            <li>Agrega una descripción en la sección <strong>Texto en línea</strong> y adjunta la carpeta comprimida en la sección <strong>Envíos de archivo</strong>.</li>
+            <li>Haz clic en <strong>Guardar cambios</strong> .</li>
+          </ul>
+        </ol>
+      </div>
+    </main>
+
+
+    <script src="./iframeResizer.contentWindow.min.js.descarga" type="text/javascript"></script>
+
+  
+
+<div style="clear: both; display: block;"></div></body></html>

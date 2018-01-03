@@ -31,31 +31,17 @@
       $this->conexion->close();
     }
 
-    function newTable($nombre_tbl, $campos){
-      $sql = 'CREATE TABLE '.$nombre_tbl.' (';
-      $length_array = count($campos);
-      $i = 1;
-      foreach ($campos as $key => $value) {
-        $sql .= $key.' '.$value;
-        if ($i!= $length_array) {
-          $sql .= ', ';
-        }else {
-          $sql .= ');';
-        }
-        $i++;
-      }
+    function consultarLogin($login){
+      $sql = 'SELECT login, passwd FROM usuario WHERE login="'.$login.'"';
       return $this->ejecutarQuery($sql);
     }
 
-    function nuevaRestriccion($tabla, $restriccion){
-      $sql = 'ALTER TABLE '.$tabla.' '.$restriccion;
+    function consultarEventos($login){
+      $sql = 'SELECT titulo, fecha_ini, hora_ini, fecha_fin, hora_fin, dia_completo, id FROM evento WHERE usuario="'.$login.'"';
       return $this->ejecutarQuery($sql);
+      //return $sql;
     }
 
-    function nuevaRelacion($from_tbl, $to_tbl, $from_field, $to_field){
-      $sql = 'ALTER TABLE '.$from_tbl.' ADD FOREIGN KEY ('.$from_field.') REFERENCES '.$to_tbl.'('.$to_field.');';
-      return $this->ejecutarQuery($sql);
-    }
 
     function insertData($tabla, $data){
       $sql = 'INSERT INTO '.$tabla.' (';
@@ -78,7 +64,6 @@
         }else $sql .= ');';
         $i++;
       }
-      echo $sql;
       return $this->ejecutarQuery($sql);
 
     }
@@ -131,6 +116,8 @@
 
       return $this->ejecutarQuery($sql);
     }
+
+
 
     function consultaCompuesta($tablas, $campos, $relaciones, $condicion = ""){
       $sql = "SELECT ";

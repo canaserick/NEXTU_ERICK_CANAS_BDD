@@ -42,7 +42,7 @@ class EventManager {
                     alert(response)
                 })
                 $('.calendario').fullCalendar('renderEvent', ev)
-                $('#titulo').text = "" 
+                $('#titulo').text = ""
             } else {
                 alert("Complete los campos obligatorios para el evento")
             }
@@ -135,11 +135,10 @@ class EventManager {
                 var y2 = ofs.top + trashEl.outerHeight(true);
                 if (jsEvent.pageX >= x1 && jsEvent.pageX<= x2 &&
                     jsEvent.pageY >= y1 && jsEvent.pageY <= y2) {
-                        alert(event.title)
                         $('.calendario').fullCalendar('removeEvents', event._id);
                         this.eliminarEvento(event)
-                        $('.delete').find('img').attr('src', "img/delete.png");
                     }
+                    $('.delete').find('img').attr('src', "img/delete.png");
                 }
             })
         }

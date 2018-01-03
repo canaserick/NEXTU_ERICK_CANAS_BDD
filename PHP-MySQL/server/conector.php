@@ -66,6 +66,12 @@
       return $this->ejecutarQuery($sql);
 
     }
+// obtengo el id del utlimo evento generado
+function getId(){
+    $sql = 'SELECT max(id) as id FROM evento';
+    return $this->ejecutarQuery($sql);
+}
+
 // obtener la conexion
     function getConexion(){
       return $this->conexion;

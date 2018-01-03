@@ -14,6 +14,11 @@ if($response['conexion'] == 'OK'){
    $return = $con->insertData('evento', $_POST);
    if ($return == 'true'){
       $retorno['msg'] = 'Insercion OK';
+      // obtengo el id del registro insertado
+      $resultado_consulta = $con->getId();
+      $rows = array();
+      $rows = $resultado_consulta->fetch_assoc();
+      $retorno['id'] = $rows['id'];
    }
    else {
      $retorno['msg'] = 'Error en la insercion';

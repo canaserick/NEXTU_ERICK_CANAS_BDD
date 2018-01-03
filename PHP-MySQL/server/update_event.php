@@ -21,7 +21,8 @@ if($response['conexion'] == 'OK'){
       $retorno['msg'] = 'Actualizacion OK';
    }
    else {
-     $retorno['msg'] = 'Error en la actualizacion';
+     //$retorno['msg'] = 'Error en la actualizacion';
+     $retorno['msg'] = $_POST['id'].$_POST['start_date'];
    }
 }
 /* devuelvo el resultado de la insercion al front-end */

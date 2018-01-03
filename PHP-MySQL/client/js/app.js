@@ -79,19 +79,21 @@ class EventsManager {
         type: 'POST',
         success: (data) =>{
           if (data.msg=="Insercion OK") {
-            alert('Se ha añadido el evento exitosamente')
+            alert('Se ha añadido el evento exitosamente: ' + data.id)
             if (document.getElementById('allDay').checked) {
               $('.calendario').fullCalendar('renderEvent', {
                 title: $('#titulo').val(),
                 start: $('#start_date').val(),
-                allDay: true
+                allDay: true,
+                id: data.id
               })
             }else {
               $('.calendario').fullCalendar('renderEvent', {
                 title: $('#titulo').val(),
                 start: $('#start_date').val()+" "+$('#start_hour').val(),
                 allDay: false,
-                end: $('#end_date').val()+" "+$('#end_hour').val()
+                end: $('#end_date').val()+" "+$('#end_hour').val(),
+                id: data.id
               })
             }
           }else {

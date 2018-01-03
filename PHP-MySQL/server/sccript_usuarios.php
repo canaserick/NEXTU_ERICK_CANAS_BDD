@@ -1,6 +1,6 @@
 
 <?php
-
+  // Script para la creación de usuarios del sistema
   include('conector.php');
 
   $con = new ConectorBD('localhost','canaserick','JulianAndres2001.');
@@ -46,7 +46,7 @@
       $response['msg'] .= + $data["login"];
     }
     echo json_encode($response);
-    
+
   }else {
     $response['msg']= "No se pudo conectar a la base de datos";
   }

@@ -1,6 +1,6 @@
 <?php
 
-
+// metodo para validar el login y password del usuario
   require('./conector.php');
 
   $con = new ConectorBD('localhost','canaserick','JulianAndres2001.');

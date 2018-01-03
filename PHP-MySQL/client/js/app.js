@@ -6,11 +6,11 @@ class EventsManager {
         this.obtenerDataInicial()
     }
 
-
+// carga los eventos del usuario en el calendario
     obtenerDataInicial() {
         this.poblarCalendario()
     }
-
+// metodo que dibuja el calendario
     poblarCalendario() {
         $('.calendario').fullCalendar({
             header: {
@@ -18,7 +18,7 @@ class EventsManager {
         		center: 'title',
         		right: 'month,agendaWeek,basicDay'
         	},
-        	defaultDate: '2017-12-01',
+        	defaultDate: '2018-01-01',
         	navLinks: true,
         	editable: true,
         	eventLimit: true,
@@ -52,6 +52,7 @@ class EventsManager {
         })
     }
 
+// graba en la bdd un nuevo evento, llamando a new_event.php
     anadirEvento(){
       var form_data = new FormData();
       form_data.append('titulo', $('#titulo').val())
@@ -104,8 +105,8 @@ class EventsManager {
 
     }
 
+// eliminar un evento llamando a delete_event.php
     eliminarEvento(event, jsEvent){
-
       var form_data = new FormData()
       form_data.append('id', event.id)
       $.ajax({
@@ -131,6 +132,7 @@ class EventsManager {
       $('.delete-btn').css('background-color', '#8B0913')
     }
 
+// actualizar evento, llama a update_event-php
     actualizarEvento(evento) {
         let id = evento.id,
             start = moment(evento.start).format('YYYY-MM-DD HH:mm:ss'),
@@ -176,7 +178,7 @@ class EventsManager {
 
 }
 
-
+//funcion principal
 $(function(){
   initForm();
   var e = new EventsManager();

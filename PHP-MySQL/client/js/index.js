@@ -1,3 +1,4 @@
+// funcion para obtener una cookie del servidor
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -14,12 +15,12 @@ function getCookie(cname) {
   return "";
 }
 
-
+// funcion principal, crea la clase login
 $(function(){
   var l = new Login();
 })
 
-
+// definicion de la calses login
 class Login {
   constructor() {
     this.submitEvent()
@@ -32,6 +33,7 @@ class Login {
     })
   }
 
+//valida el login en el bdd, a través de checklogin.php
   sendForm(){
     let form_data = new FormData();
     form_data.append('username', $('#user').val())

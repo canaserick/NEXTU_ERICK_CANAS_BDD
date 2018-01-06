@@ -15,6 +15,7 @@ mongoose.connect('mongodb://localhost/c7')
 
 
 app.use(express.static('client'))
+app.use(express.static('server'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(cookieParser())
